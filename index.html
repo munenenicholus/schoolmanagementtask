@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+
+    <script type="module">
+        // Define the Student class
+        class Student {
+            constructor(firstName, lastName, grade) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.grade = grade;
+            }
+
+            getFullName = () => `${this.firstName} ${this.lastName}`;
+        }
+
+        // Import the getGradeStatus function from your gradeModule
+        import { getGradeStatus } from './gradeModule.js';
+
+        // Create an instance of the Student class
+        const studentInstance = new Student('Alice', 'Smith', 85);
+        const fullName = studentInstance.getFullName();
+
+        // Get the grade status using the imported getGradeStatus function
+        const gradeStatus = getGradeStatus(studentInstance.grade);
+
+        console.log(`Full Name: ${fullName}`);
+        console.log(`Grade Status: ${gradeStatus}`);
+    </script>
+    
+</body>
+</html>
